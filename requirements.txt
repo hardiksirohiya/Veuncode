@@ -6,3 +6,4 @@ chromadb
 numpy
 uvicorn
 gunicorn
+python-multipart
