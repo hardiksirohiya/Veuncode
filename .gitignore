@@ -1,0 +1,20 @@
+# 1. Ignore everything in the repository by default.
+*
+
+# 2. Add exceptions to "un-ignore" the specific files you want to track.
+# The "!" prefix means "do not ignore".
+
+# Un-ignore the .gitignore file itself so it's included in the repository.
+!.gitignore
+
+# Un-ignore the main requirements file.
+!requirements.txt
+
+# Un-ignore the 'api' directory so Git can look inside it.
+!api/
+
+# Re-ignore everything inside the 'api' directory.
+api/*
+
+# Finally, un-ignore the specific app file inside the 'api' directory.
+!api/app.py
