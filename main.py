@@ -85,7 +85,7 @@ def extract_frames(video_path: str, fps: int = 1):
 def health_check():
     return {"status": "ok", "message": "Service is running"}
 
-@app.post("/chat/infer")
+@app.post("/infer")
 async def unified_chat(
     prompt: str = Form(...),
     video_file: Optional[UploadFile] = File(None),
