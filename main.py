@@ -81,6 +81,10 @@ def extract_frames(video_path: str, fps: int = 1):
 
 # --- API Endpoints ---
 
+@app.get("/")
+def health_check():
+    return {"status": "ok", "message": "Service is running"}
+
 @app.post("/chat/infer")
 async def unified_chat(
     prompt: str = Form(...),
