@@ -5,3 +5,4 @@ google.generativeai
 chromadb
 numpy
 uvicorn
+gunicorn
