@@ -12,6 +12,9 @@ from chromadb.utils import embedding_functions
 from chromadb import PersistentClient
 import numpy as np
 import uvicorn
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- ChromaDB Setup ---
 client = PersistentClient(path="./chroma_db")
