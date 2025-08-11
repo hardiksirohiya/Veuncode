@@ -19,7 +19,7 @@ client = PersistentClient(path="./chroma_db")
 from chromadb.utils.embedding_functions import GoogleGenerativeAiEmbeddingFunction
 
 try:
-    gemini_ef = GoogleGenerativeAiEmbeddingFunction(api_key="AIzaSyATIg2PwhikLCGjYvPqo4VWgGUljs8Tya8")
+    gemini_ef = GoogleGenerativeAiEmbeddingFunction(api_key=os.getenv("gemini_api_key"))
     chat_history_collection = client.get_or_create_collection(
         name="chat_history",
         embedding_function=gemini_ef
@@ -35,7 +35,7 @@ app = FastAPI(title="Multimodal Chat API")
 
 # --- Gemini API Client Initialization ---
 try:
-    gemini_api_key = "AIzaSyATIg2PwhikLCGjYvPqo4VWgGUljs8Tya8" # Replace with your key
+    gemini_api_key = os.getenv("gemini_api_key") # Replace with your key
     if not gemini_api_key:
         raise ValueError("GEMINI_API_KEY is not set.")
     genai.configure(api_key=gemini_api_key)
