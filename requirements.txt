@@ -7,3 +7,4 @@ numpy
 uvicorn
 gunicorn
 python-multipart
+python-dotenv
